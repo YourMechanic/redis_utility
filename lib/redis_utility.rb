@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "redis_utility/version"
+require_relative 'redis_utility/version'
 
 module RedisUtility
   class Error < StandardError; end

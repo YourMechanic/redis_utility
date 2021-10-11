@@ -134,10 +134,18 @@ module RedisUtility
     end
   end
 
+  def redis_config
+    @redis_config
+  end
+
+  def redis_config=(redis_conf)
+    @redis_config = redis_conf
+  end
+
   def redis
     unless @redis
       # print "RedisUtility: Connecting\n"
-      cfg = REDIS_CONFIG.dup
+      cfg = redis_config.dup
       cfg[:timeout] = 60 # Set longer timeout for efficient bulk loading/save
       @redis = Redis.new(cfg)
     end

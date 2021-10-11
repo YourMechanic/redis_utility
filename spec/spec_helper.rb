@@ -54,6 +54,6 @@ unless defined?(RUBY_ENGINE) && RUBY_ENGINE == 'jruby'
   end
 end
 
-REDIS_CONFIG = {
+RedisUtility.redis_config = {
   host: REDIS_HOST
 }.freeze

@@ -20,6 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
+After installing the gem create a file redis_utility.rb in config/initializers with following content:
+
+```ruby
+RedisUtility.redis_config = { host: 'localhost', timeout: 60, db: 'redis_db', password: 'password'}
+```
+
 Following are use cases:
 
 ### To get the redis config

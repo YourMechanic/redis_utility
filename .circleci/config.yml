@@ -10,6 +10,7 @@ jobs:
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
     docker:
       - image: circleci/ruby:2.6.2
+      - image: redis
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS      

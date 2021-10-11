@@ -13,11 +13,14 @@ Metrics/AbcSize:
 Gemspec/RequiredRubyVersion:
   Enabled: false
 
+Metrics/BlockNesting:
+  Enabled: false  
+
 Layout/LineLength:
   Max: 120
 
 Metrics/MethodLength:
-  Max: 25
+  Max: 40
 Metrics/ClassLength:
   Max: 300
 Metrics/BlockLength:

@@ -20,7 +20,7 @@ RSpec.describe RedisUtility do
   end
 
   describe '.export_data' do
-    it 'exports matching keys to from redis to a file' do
+    it 'exports matching keys from redis to a file' do
       RedisUtility.export_data('Car_Acura|CL|*', ouput_export_file)
       expect(File.exist?(ouput_export_file)).to be
     end

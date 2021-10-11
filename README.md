@@ -1,8 +1,6 @@
 # RedisUtility
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/redis_utility`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+An awesome gem which provides utility methods for redis db. Can be used with any rails application which is using redis.
 
 ## Installation
 
@@ -22,7 +20,42 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Following are use cases:
+
+### To get the redis config
+```ruby
+RedisUtility.redis
+```
+
+### To stop and create a new redis connection
+```ruby
+RedisUtility.reconnect
+```
+
+### To import data from a file to redis
+```ruby
+RedisUtility.import_data('import_file.ljson')
+```
+
+### To export matching keys values from redis to a file
+```ruby
+RedisUtility.export_data('Car_Acura|CL|*', 'ouput_export_file.ljson')
+```
+
+### To cache a string to redis db. It caches the value of the block passed to it
+```ruby
+RedisUtility.cache_string('cache_this', { expire: 20 }) { 'the value of block passed' }
+```
+
+### To cache multijson value in redis. It caches the value of the block passed to it
+```ruby
+RedisUtility.cache('cache_multi_json', { expire: 20 }) { '{"Car_Acura|CL|":"01010000_EE000000000","Car_Acura|CL|L4-2.2L":"01010100_2000000000"}' }
+```
+
+### To export matching string key data to a file
+```ruby
+RedisUtility.export_string_data('Car_Acura|CL|*', 'string_export_file.ljson')
+```
 
 ## Development
 

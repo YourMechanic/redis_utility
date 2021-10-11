@@ -37,7 +37,7 @@ end
 def kill_redis
   pidfile = File.expand_path REDIS_PID,  REDIS_RUNDIR
   rdbfile = File.expand_path REDIS_DUMP, REDIS_RUNDIR
-  pid = File.read(pidfile).to_i
+  pid = File.read(pidfile).to_i if File.exist?(pidfile)
   puts "=> Killing #{REDIS_BIN} with pid #{pid}"
   Process.kill 'TERM', pid
   Process.kill 'KILL', pid

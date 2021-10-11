@@ -30,7 +30,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'byebug'
+  spec.add_development_dependency 'multi_json'
   spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'redis'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop', '~> 1.7'
+  spec.add_development_dependency 'yajl-ruby', '1.4.1'
 end
